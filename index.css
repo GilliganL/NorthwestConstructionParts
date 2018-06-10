@@ -4,9 +4,12 @@ body {
 
 header {
 	border: 2px solid purple;
-	max-height: 75px;
-	position: relative;
-	/*background: lightblue;*/
+	height: 60px;
+	position: fixed;
+	width: 100%;
+	top: 0;
+	left: 0;
+	background: white;
 }
 
 nav {
@@ -20,7 +23,7 @@ nav {
 	width: 10%;
 	border: 2px solid red;
 	position: absolute;
-	left: 0;
+	left: 20px;
 	top: 0;
 }
 
@@ -30,7 +33,12 @@ ul {
 	position: absolute;
 	bottom: -5px;
 	right: 50px;
+	margin-bottom: 0;
 	
+}
+
+header .row {
+	margin-bottom: 0;
 }
 
 li {
@@ -38,7 +46,7 @@ li {
 	border: 2px solid blue;
 	display: inline-block;
 	height: 50px;
-	padding: 5px 10px;
+	
 	float: left;
 
 }
@@ -48,8 +56,9 @@ li:hover, .nav-link:hover {
 }
 
 .nav-link {
-	padding-top: 10px;
-	height: 50px;
+	padding: 5px 10px;
+	height: 100%;
+	padding-top: 13px;
 	display: block;
 	text-decoration: none;
 	color: black;
@@ -59,9 +68,15 @@ li:hover, .nav-link:hover {
 	color: white;
 }
 
+main {
+	padding-top: 60px;
+}
+
 section {
 	border: 2px solid black;
 	text-align: center;
+	padding-top: 100px;
+	/*min-height: 500px;*/
 }
 
 .products {
@@ -70,6 +85,15 @@ section {
 
 .products h2 {
 	text-align: center;
+}
+
+.js-query, #search-button, #search-label {
+	height: 40px;
+}
+
+.card {
+	text-align: left;
+	border: 2px solid black;
 }
 
 footer {
