@@ -3,9 +3,76 @@ body {
 }
 
 header {
+	border: 2px solid purple;
+	max-height: 75px;
+	position: relative;
+	/*background: lightblue;*/
+}
 
+nav {
+	border: 2px solid green;
+	margin-top: 10px;
+	min-height: 50px;
+	max-height: 75px;
+}
+
+.logo {
+	width: 10%;
+	border: 2px solid red;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+ul {
+	list-style: none;
+	/*text-align: right;*/
+	position: absolute;
+	bottom: -5px;
+	right: 50px;
+	
+}
+
+li {
+	/*background: lightblue;*/
+	border: 2px solid blue;
+	display: inline-block;
+	height: 50px;
+	padding: 5px 10px;
+	float: left;
+
+}
+
+li:hover, .nav-link:hover {
+	background: blue;
+}
+
+.nav-link {
+	padding-top: 10px;
+	height: 50px;
+	display: block;
+	text-decoration: none;
+	color: black;
+}
+
+.nav-link:hover {
+	color: white;
 }
 
 section {
 	border: 2px solid black;
+	text-align: center;
+}
+
+.products {
+	text-align: left;
+}
+
+.products h2 {
+	text-align: center;
+}
+
+footer {
+	height: 50px;
+	text-align: center;
 }

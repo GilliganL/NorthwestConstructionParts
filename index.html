@@ -12,57 +12,98 @@
 	</head>
 	<body>
 		<header role="banner">
-      <a href='/' class="logo-link">
-        <img src="" alt="Southwest Construction Parts Logo">
-      </a>
-      <nav role="navigation" class="nav-bar">
-        <ul class="navbar-list">
-          <li><a href="#about">About</a></li>
-          <li><a href="#products">Products</a></li>
-          <li><a href="#eBay">eBay Store</a></li>
-          <li><a href="directions">Directions</a></li>
-          <li><a href="contact">Contact</a></li>
-          <li>Call Us: <a href="tel:5555555555">5059488497</a></li>
-        </ul> 
-      </nav>
+      <div class="row">
+        <div class="col-12">
+          <nav role="navigation" class="nav-bar">
+            <a href='/' class="logo-link">
+              <img src="images/trucking.svg" alt="Southwest Construction Parts Logo" class="logo">
+            </a>
+            <ul class="navbar-list">
+              <li><a href="#products" class="nav-link">Products</a></li>
+              <li><a href="#eBay" class="nav-link">eBay Store</a></li>
+              <li><a href="directions" class="nav-link">Directions</a></li>
+              <li><a href="contact" class="nav-link">Contact</a></li>
+              <li><a href="tel:5555555555" class="nav-link">Call Us: 5059488497</a></li>
+            </ul> 
+          </nav>
+         </div>
+      </div>
     </header>
 		<main role="main">
-      
       <section class="landing">
         <div class="row">
-          <h1>Southwest Construction Parts</h1>
-          <h2>Heavy Equipment Replacement Parts</h2>
-          <p>Serving New Mexico and surrounding communities</p>
+          <div class="col=12">
+            <h1>Southwest Construction Parts</h1>
+            <h2>Heavy Equipment Replacement Parts</h2>
+            <p>Serving New Mexico and surrounding communities</p>
+          </div>
         </div>
       </section>
-      <section class="about" id="about"></section>
       <section class="products" id="products">
         <div class="row">
-         <h2>Independent dealer of wear parts and components for heavy equipment</h2>
+          <div class="col-12">
+           <h2>Independent dealer of wear parts and components for heavy equipment</h2>
+          </div>
         </div>
         <div class="row">
-          <div class="col-3">
+          <div class="col-4">
             <h3>Quality, Warranty Backed Parts</h3>
             <p>We carry factory new parts for Barber, Blaw Knox, Broce, Cat, Case, Greene, Deere,Komatsu, Volvo, and many others</p>
             <p>Authorized dealer for Black Cat Blades, Bucyrus Blades, ESCO, H-E Parts, ITR/Metaris, Kennametal, Pengo, and other quality manufacturers.</p>
           </div>
-          <div class="col-3">
+          <div class="col-4">
             <h3>Service Area</h3>
             <p>Based in Albuquerque, our sales team travels throughout New Mexico and the surrounding areass. We stock most of the common parts at our warehouse and can ship or deliver to your location.</p>
             <p>Specialty parts can be ordered from our wide network of manufacturers. We belong to a network of dealers across North America that can locate used, rebuilt, and new components including pins, bushings, cylinders, engines, transmissions, turbos, and floor and equipment attachments such as forks and buckets.</p>
           </div>
-          <div class="col-3">
+          <div class="col-4">
             <h3>Customer Service</h3>
             <p>We deliver high quality customer service and parts at a reasonable price. We offer competitive prices. Call us today for quote and see how we can support your business. We look forward to working with you! </p>
           </div>
         </div>
       </section>
-
-      <section class="eBay" id="eBay"></section>
-      <section class="directions" id="directions"></section>
-      <section class="contact" id="contact"></section>
+      <section class="eBay" id="eBay">
+        <div class="row">
+          <div class="col-12">
+            <h2>Search Our eBay Store</h2>
+            <h3>Stocked with thousands of items and actively updated</h3>
+            <form class="ebay-form" action="#">
+              <label for="query"></label>
+              <input type="text" class="js-query" placeholder="part name or number" required>
+              <button type="submit" id="search-button">Search</button>
+            </form>
+          </div>
+        </div>
+        <div class="row search-results"></div>
+        <div class="nextForm"></div>
+      </section>
+      <section class="directions" id="directions">
+        <div class="row">
+          <div class="col-6">
+            <h2>Who We Are</h2>
+            <p>Sit dolore mollit sunt mollit laboris ut in sit reprehenderit nulla incididunt dolor cillum sint exercitation incididunt sunt duis in consectetur culpa ut ut adipisicing quis elit aliqua tempor esse eu ut reprehenderit occaecat eiusmod occaecat incididunt officia.</p>
+          </div>
+          <div class="col-6">
+            <h2>Location and Contact Information</h2>
+            <p>Parts Warehouse Address:<br>2113 2nd Street NW,<br>Albuquerque, NM 87102</p>
+            <p>Office Number: 505-220-4076</p>
+            <p>Fax: 505-242-6820</p>
+            <p>Email: scparts@comcast.net</p>
+          </div>
+        </div>
+      </section>
+      <section class="contact" id="contact">
+        <div class="row">
+          <div class="col-12">
+            <h2>Email Us</h2>
+          </div>
+        </div>
+      </section>
    
     </main>
+    <footer>
+      <div>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+    </footer>
 	</body>
 
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
