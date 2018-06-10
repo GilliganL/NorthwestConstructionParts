@@ -7,73 +7,59 @@ const EBAY_SEARCH_URL = `https://svcs.ebay.com/services/search/FindingService/v1
 }
 
 function renderResult(result, index) {
-  console.log('renderResult ran');
-  const indexNum = index;
-  console.log(indexNum);
-  if (indexNum == 0 || indexNum == 4 || indexNum == 8) {
-    console.log('A ran');
-    return `
-    <div class="row">
-    <div class="col-3">
-      <h4>${result.title}</h4>
-      <a class="js-result-name" href="${result.viewItemURL}" target="_blank">
-      <img src="${result.galleryURL}" alt="eBay item no. ${result.itemID}: ${result.title}">
-      </a>
-      <p>Category ${result.primaryCategory.categoryName}
-      Current Price: ${result.sellingStatus.currentPrice}
-      Time left on auction: ${result.sellingStatus.timeLeft}</p>
-    </div>`;
-  } else if (indexNum == 3 || indexNum == 7 || indexNum == 11) {
-    console.log('B ran');
-    return `
-    <div class="col-3">
-      <h4>${result.title}</h4>
-      <a class="js-result-name" href="${result.viewItemURL}" target="_blank">
-      <img src="${result.galleryURL}" alt="eBay item no. ${result.itemID}: ${result.title}">
-      </a>
-      <p>Category ${result.primaryCategory.categoryName}
-      Current Price: ${result.sellingStatus.currentPrice}
-      Time left on auction: ${result.sellingStatus.timeLeft}</p>
+  const indexNum = index + 1;
+  //determine first of row and store for use in building html
+  let newRow = [];
+  let j = 1;
+  while (j < 12) {
+    newRow.push(j);
+    j += 3;
+  }   
+  // div html template
+  let currentPrice = parseFloat(`${result.sellingStatus[0].currentPrice[0].__value__}`);
+  let displayPrice = currentPrice.toFixed(2);
+
+  let template = `<div class="col-4">
+    <div class="card">
+    <h4>${result.title}</h4>
+    <a class="js-result-name" href="${result.viewItemURL}" target="_blank">
+    <img src="${result.galleryURL}" alt="eBay item no. ${result.itemID}: ${result.title}" class="card-image">
+    </a>
+   <p>Category:<br> ${result.primaryCategory[0].categoryName[0]}<br>
+      Current Price: $${displayPrice}</p>
     </div>
-    </div>`;
-  } else {
-    console.log('C ran');
-    return `
-      <div class="col-3">
-        <h4>${result.title}</h4>
-        <a class="js-result-name" href="${result.viewItemURL}" target="_blank">
-        <img src="${result.galleryURL}" alt="eBay item no. ${result.itemID}: ${result.title}">
-        </a>
-        <p>Category ${result.primaryCategory.categoryName}
-        Current Price: ${result.sellingStatus.currentPrice}
-        Time left on auction: ${result.sellingStatus.timeLeft}</p>
-      </div>
-    `;
-}
+   </div>`;
+  // add row tag to first item in row
+  if (newRow.includes(indexNum)) {
+    template = `<div class="row">` + template;
+  }
+  // add ending tag to last item in row
+  if (indexNum % 3 === 0) {
+    template += `</div>`;
+  }
+  return template;
 }
 
 function displayEbaySearchData(data) {
-  
   const resultArray = data.findItemsIneBayStoresResponse[0].searchResult[0].item;
-  console.log(resultArray);
   const results = resultArray.map((item, index) => renderResult(item, index));
-  console.log(results);
-  $('.search-results').html(results);
+  //join array of stings into one string and add to .search-results div
+  $('.search-results').html(results.join(''));
 }
 
 
-function watchSubmit() {
+//watch submit of eBay search button
+function watchEbaySubmit() {
   $('.ebay-form').submit(event => {
     event.preventDefault();
     const queryTarget = $(event.currentTarget).find('.js-query');
     const query = queryTarget.val();
-    // clear out the input
     queryTarget.val("");
     getDataFromApi(query, displayEbaySearchData);
   });
 }
 
-$(watchSubmit);
+$(watchEbaySubmit);
 
 
 
