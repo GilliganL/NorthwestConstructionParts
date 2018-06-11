@@ -99,9 +99,14 @@ p {
 	height: 40px;
 }
 
-.js-query {
+input, textarea {
 	width: 300px;
 	padding: 5px 10px;
+	margin-bottom: 10px;
+}
+
+textarea {
+	height: 113.5px;
 }
 
 .card {
@@ -133,11 +138,27 @@ p {
 	bottom: 5px;
 }
 
+#map {
+	height: 400px;
+	width: 100%;
+}
+
+#gotcha {
+	display: none;
+}
+
+#contacth2 {
+	margin-bottom: 30px;
+}
+
 footer {
 	height: 50px;
 	padding-top: 20px;
 	text-align: center;
 }
+
+
+
 
 /*Screens bigger than 768px */
 @media only screen and (max-width: 768px) {

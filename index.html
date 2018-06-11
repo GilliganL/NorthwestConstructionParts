@@ -8,6 +8,7 @@
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.css" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="index.css">
     <link rel="stylesheet" type="text/css" href="float-grid.css">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/InventPartners/flex-responsive-burger-menu/master/css/nav.min.css" />
  <!--    <link href="https://fonts.googleapis.com/css?family=Merienda" rel="stylesheet"> -->
 	</head>
 	<body>
@@ -18,7 +19,7 @@
             <a href='/' class="logo-link">
               <img src="images/trucking.svg" alt="Southwest Construction Parts Logo" class="logo">
             </a>
-            <ul class="navbar-list">
+            <ul class="navbar-list right" id="inv-menu">
               <li><a href="#products" class="nav-link">Products</a></li>
               <li><a href="#eBay" class="nav-link">eBay Store</a></li>
               <li><a href="#location" class="nav-link">Location</a></li>
@@ -28,6 +29,12 @@
           </nav>
          </div>
       </div>
+      <button type="button" id="inv-nav-main-btn" class="hamburger right">
+  <span class="hamburger-box">
+    <span class="hamburger-inner"></span>
+  </span>
+  <span class="text">Menu</span>
+</button>
     </header>
 		<main role="main">
       <section class="landing">
@@ -74,6 +81,9 @@
             </form>
           </div>
         </div>
+        <div class="categories">
+         <!--  add categories of parts that on click will display that search. Render in JS Add start over button -->
+        </div>
         <div class="search-results"></div>
         <div class="nextForm"></div>
       </section>
@@ -98,20 +108,30 @@
           </div>
           <div class="col-6">
             <h2>Map</h2>
+            <div id="map">
+            
+          </div>
           </div>
         </div>
       </section>
       <section class="contact" id="contact">
-        <div class="row">
-          <div class="col-12">
-            <h2>Email Us</h2>
-            <form action="https://formspree.io/lynseympowell@gmail.com"
-            method="POST">
-            <input type="text" name="name">
-            <input type="email" name="_replyto">
-            <input type="submit" value="Send">
-        </form>
-          </div>
+        <h2 id="contacth2">Contact Us for a Quote or More Information</h2>
+          <div class="row">
+           <form action="https://formspree.io/lynseympowell@gmail.com"
+              method="POST">
+            <div class="col-6">
+              <input type="text" name="name" placeholder="Name" required>
+              <input type="text" name="company" placeholder="Company">
+              <input type="email" name="_replyto" placeholder="Email Address" required>
+              <input type="tel" name="telephone" placeholder="555-555-5555">
+            </div>
+            <div class="col-6">
+              <textarea name="message" placeholder="Your message here"></textarea> 
+              <input type="hidden" name="_subject" value="New Contact"/>
+              <input type="text" name="_gotcha" id="gotcha"/>
+              <input type="submit" value="Send">
+             </div>
+          </form> 
         </div>
       </section>
    
@@ -123,4 +143,8 @@
 
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script src="index.js"></script>
+<script src="https://cdn.rawgit.com/InventPartners/flex-responsive-burger-menu/master/js/nav.min.js"></script>
+<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCTuBqNBkXAeayZk1OcXaUGRoMdhGvK66I&callback=initMap">
+    </script>
 </html>
