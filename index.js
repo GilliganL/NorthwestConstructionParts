@@ -24,7 +24,7 @@ function renderResult(result, index) {
 
   let template = `<div class="col-4">
     <div class="card">
-    <h4>${result.title}</h4>
+    <h4 id="cardh4">${result.title}</h4>
     <a class="js-result-name" href="${result.viewItemURL}" target="_blank">
     <img src="${result.galleryURL}" alt="eBay item no. ${result.itemID}: ${result.title}" class="card-image">
     </a>

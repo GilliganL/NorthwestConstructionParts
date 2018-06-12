@@ -3,37 +3,36 @@ body {
 }
 
 header {
-	border: 2px solid purple;
+	background: lightblue;
+	border: 2px solid black;
 	height: 75px;
 	position: fixed;
 	width: 100%;
 	top: 0;
 	left: 0;
-	background: white;
+	z-index: 1000;
 }
 
 nav {
-/*	border: 2px solid green;*/
 	margin-top: 8px;
 	min-height: 50px;
 	max-height: 75px;
 }
 
 .logo {
-	width: 10%;
-	border: 2px solid red;
+	width: 15%;
 	position: absolute;
 	left: 25px;
 	top: 0;
+	margin-top: -30px;
 }
 
-ul {
+ul#inv-menu {
 	list-style: none;
-	/*text-align: right;*/
 	position: absolute;
 	bottom: -2px;
-	right: 50px;
 	margin-bottom: 0;
+	right: 20px;
 	
 }
 
@@ -42,7 +41,6 @@ header .row {
 }
 
 li {
-	/*background: lightblue;*/
 	border: 2px solid blue;
 	display: inline-block;
 	height: 50px;
@@ -50,7 +48,7 @@ li {
 
 }
 
-li:hover, .nav-link:hover {
+li:hover {
 	background: blue;
 }
 
@@ -74,8 +72,8 @@ main {
 section {
 	border: 2px solid black;
 	text-align: center;
-	padding-top: 100px;
 	padding-bottom: 50px;
+	padding-top: 75px;
 }
 
 p {
@@ -118,17 +116,20 @@ textarea {
 }
 
 .card-image {
-	width: 80%;
-	margin-top: 20%;
+	width: auto;
+	max-width: 100%;
+	margin-top:	45%;
+	height: 150px;
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
 }
 
 .card h4 {
-	margin: 10px;
+	margin: 0;
 	position: absolute;
 	top: 10px;
+	max-height: 50px;
 
 }
 
@@ -160,23 +161,7 @@ footer {
 }
 
 
-
-
-/*Screens bigger than 768px */
-@media only screen and (max-width: 768px) {
- .card-image {
- 	margin-top:	45%;
- }
-
- section {
- 	padding-top: 75px;
- }
-
- ul {
- 	right: 20px;
- }
-}
-
+/*Screens smaller than 480px*/
 @media only screen and (max-width: 480px) {
 	.card {
 		margin-bottom: 10px;
@@ -193,4 +178,42 @@ footer {
 	footer {
 		padding-bottom: 10px;
 	}
+}
+
+/*Screens bigger than 768px*/
+@media screen and (min-width: 768px) {
+
+ul#inv-menu {
+   height: 50px;
+    position: absolute;
+    right: 30px;
+    bottom: 0;  
+}
+
+.row, .col-12 {
+	height: 100%;
+}
+
+#inv-menu li {
+	height: 50px;
+}
+
+.nav-link {
+	position: relative;
+	bottom: 0;
+}
+
+ul#inv-menu li a {
+	line-height: 50px;
+}
+
+.card-image {
+	height: 180px;
+	margin-top: 30%;
+}
+
+section {
+	padding-top: 100px;
+}
+
 }
