@@ -10,7 +10,7 @@ header {
 	width: 100%;
 	top: 0;
 	left: 0;
-	z-index: 1000;
+	z-index: 95;
 }
 
 nav {
@@ -22,31 +22,21 @@ nav {
 .logo {
 	width: 15%;
 	position: absolute;
-	left: 25px;
+	left: 50px;
 	top: 0;
-	margin-top: -30px;
 }
 
 ul#inv-menu {
 	list-style: none;
-	position: absolute;
+/*	position: absolute;*/
 	bottom: -2px;
-	margin-bottom: 0;
-	right: 20px;
-	
+	margin-bottom: 0;	
 }
 
 header .row {
 	margin-bottom: 0;
 }
 
-li {
-	border: 2px solid blue;
-	display: inline-block;
-	height: 50px;
-	float: left;
-
-}
 
 li:hover {
 	background: blue;
@@ -92,8 +82,7 @@ p {
 	text-align: center;
 }
 
-
-.js-query, #search-button, #search-label {
+.js-query, button, #search-label {
 	height: 40px;
 }
 
@@ -104,7 +93,7 @@ input, textarea {
 }
 
 textarea {
-	height: 113.5px;
+	height: 75px;
 }
 
 .card {
@@ -160,6 +149,10 @@ footer {
 	text-align: center;
 }
 
+.hidden {
+	display: none;
+}
+
 
 /*Screens smaller than 480px*/
 @media only screen and (max-width: 480px) {
@@ -183,11 +176,23 @@ footer {
 /*Screens bigger than 768px*/
 @media screen and (min-width: 768px) {
 
+.logo {
+	margin-top: -15px;
+	left: 25px;
+	width: 13%;
+}
+
 ul#inv-menu {
    height: 50px;
     position: absolute;
     right: 30px;
     bottom: 0;  
+}
+
+li {
+	display: inline-block;
+	height: 50px;
+	float: left;
 }
 
 .row, .col-12 {
@@ -214,6 +219,10 @@ ul#inv-menu li a {
 
 section {
 	padding-top: 100px;
+}
+
+textarea {
+	height: 113.5px;
 }
 
 }

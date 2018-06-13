@@ -1,4 +1,4 @@
-const EBAY_CATEGORY_URL="http://svcs.ebay.com/services/search/FindingService/v1?OPERATION-NAME=findItemsByCategory&SERVICE-VERSION=1.0.0&SECURITY-APPNAME=LynseyPo-SWCWebsi-PRD-e2ccf98b2-a9811a7d&RESPONSE-DATA-FORMAT=JSON&REST-PAYLOAD&categoryId=66927&itemFilter(0).name=Seller&itemFilter(0).value(0)=diggersupply&paginationInput.entriesPerPage=12&paginationInput.pageNumber=1"
+// const EBAY_CATEGORY_URL=`http://svcs.ebay.com/services/search/FindingService/v1?OPERATION-NAME=findItemsByCategory&SERVICE-VERSION=1.0.0&SECURITY-APPNAME=LynseyPo-SWCWebsi-PRD-e2ccf98b2-a9811a7d&RESPONSE-DATA-FORMAT=JSON&REST-PAYLOAD&categoryId=${queryTarget}&itemFilter(0).name=Seller&itemFilter(0).value(0)=diggersupply&paginationInput.entriesPerPage=12&paginationInput.pageNumber=1&callback=?`;
 
 
 
@@ -44,11 +44,15 @@ function renderResult(result, index) {
 }
 
 function displayEbaySearchData(data) {
-  const resultArray = data.findItemsIneBayStoresResponse[0].searchResult[0].item;
-  const results = resultArray.map((item, index) => renderResult(item, index));
-  //join array of stings into one string and add to .search-results div
-  $('.search-results').html(results.join(''));
-}
+  try {
+      const resultArray = data.findItemsIneBayStoresResponse[0].searchResult[0].item;
+      const results = resultArray.map((item, index) => renderResult(item, index));
+      //join array of stings into one string and add to .search-results div
+      $('.search-results').html(results.join(''));
+    } catch {
+        $('.search-results').html('<h4>Please enter a valid search term</h4>');
+    }
+  }
 
 
 //watch submit of eBay search button
@@ -58,9 +62,34 @@ function watchEbaySubmit() {
     const queryTarget = $(event.currentTarget).find('.js-query');
     const query = queryTarget.val();
     queryTarget.val("");
+    $('.categories').addClass('hidden');
     getDataFromApi(query, displayEbaySearchData);
   });
 }
+
+
+
+function getCategoryDataFromEbay(category) {
+  console.log('getCategoryDataFromEbay ran');
+
+   // EBAY_CATEGORY_URL=`www.ebay.com/${category}xxxxxxx`;
+   
+   //     $.getJSON(EBAY_CATEGORY_URL, callback);
+}
+
+function listenForCategoryButton() {
+
+  $('.category-form').click(event => {
+
+        event.preventDefault();
+        console.log("listenForCategoryButton ran")
+        const queryCategory = button.data();
+        console.log(queryCategory);
+        getCategoryDataFromEbay(queryCategory);
+});
+}
+
+
 
 function initMap() {
   // The location of Uluru
@@ -75,6 +104,7 @@ function initMap() {
 function handleStartPage() {
   initMap();
   watchEbaySubmit();
+  listenForCategoryButton();
 }
 
 $(handleStartPage);
