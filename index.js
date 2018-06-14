@@ -1,4 +1,4 @@
-// const EBAY_CATEGORY_URL=`http://svcs.ebay.com/services/search/FindingService/v1?OPERATION-NAME=findItemsByCategory&SERVICE-VERSION=1.0.0&SECURITY-APPNAME=LynseyPo-SWCWebsi-PRD-e2ccf98b2-a9811a7d&RESPONSE-DATA-FORMAT=JSON&REST-PAYLOAD&categoryId=${queryTarget}&itemFilter(0).name=Seller&itemFilter(0).value(0)=diggersupply&paginationInput.entriesPerPage=12&paginationInput.pageNumber=1&callback=?`;
+
 
 
 
@@ -62,29 +62,40 @@ function watchEbaySubmit() {
     const queryTarget = $(event.currentTarget).find('.js-query');
     const query = queryTarget.val();
     queryTarget.val("");
-    $('.categories').addClass('hidden');
+    // $('.categories').addClass('hidden');
     getDataFromApi(query, displayEbaySearchData);
   });
 }
 
 
+function displayEbayCategoryData(data) {
+  try {
+      const resultArray = data.findItemsByCategoryResponse[0].searchResult[0].item;
+      const results = resultArray.map((item, index) => renderResult(item, index));
+      //join array of stings into one string and add to .search-results div
+      $('.search-results').html(results.join(''));
+    } catch {
+        $('.search-results').html('<h4>Please call us about this item</h4>');
+    }
+  }
 
 function getCategoryDataFromEbay(category) {
-  console.log('getCategoryDataFromEbay ran');
+  console.log(category);
 
-   // EBAY_CATEGORY_URL=`www.ebay.com/${category}xxxxxxx`;
+   const EBAY_CATEGORY_URL=`http://svcs.ebay.com/services/search/FindingService/v1?OPERATION-NAME=findItemsByCategory&SERVICE-VERSION=1.0.0&SECURITY-APPNAME=LynseyPo-SWCWebsi-PRD-e2ccf98b2-a9811a7d&RESPONSE-DATA-FORMAT=JSON&REST-PAYLOAD&categoryId=${category}&itemFilter(0).name=Seller&itemFilter(0).value(0)=diggersupply&paginationInput.entriesPerPage=12&paginationInput.pageNumber=1&callback=?`;
    
-   //     $.getJSON(EBAY_CATEGORY_URL, callback);
+       $.getJSON(EBAY_CATEGORY_URL, displayEbayCategoryData);
 }
+
 
 function listenForCategoryButton() {
 
-  $('.category-form').click(event => {
+  $('.category-button').click(event => {
 
         event.preventDefault();
-        console.log("listenForCategoryButton ran")
-        const queryCategory = button.data();
-        console.log(queryCategory);
+        const buttonPushed = $(event.currentTarget);
+        const queryCategory = buttonPushed.data().value;
+
         getCategoryDataFromEbay(queryCategory);
 });
 }

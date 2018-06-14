@@ -86,6 +86,10 @@ p {
 	height: 40px;
 }
 
+.category-button {
+	width: 100%;
+}
+
 input, textarea {
 	width: 300px;
 	padding: 5px 10px;
