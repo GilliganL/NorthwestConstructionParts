@@ -82,7 +82,7 @@ function displayEbayCategoryData(data) {
 function getCategoryDataFromEbay(category) {
   console.log(category);
 
-   const EBAY_CATEGORY_URL=`http://svcs.ebay.com/services/search/FindingService/v1?OPERATION-NAME=findItemsByCategory&SERVICE-VERSION=1.0.0&SECURITY-APPNAME=LynseyPo-SWCWebsi-PRD-e2ccf98b2-a9811a7d&RESPONSE-DATA-FORMAT=JSON&REST-PAYLOAD&categoryId=${category}&itemFilter(0).name=Seller&itemFilter(0).value(0)=diggersupply&paginationInput.entriesPerPage=12&paginationInput.pageNumber=1&callback=?`;
+   const EBAY_CATEGORY_URL=`https://svcs.ebay.com/services/search/FindingService/v1?OPERATION-NAME=findItemsByCategory&SERVICE-VERSION=1.0.0&SECURITY-APPNAME=LynseyPo-SWCWebsi-PRD-e2ccf98b2-a9811a7d&RESPONSE-DATA-FORMAT=JSON&REST-PAYLOAD&categoryId=${category}&itemFilter(0).name=Seller&itemFilter(0).value(0)=diggersupply&paginationInput.entriesPerPage=12&paginationInput.pageNumber=1&callback=?`;
    
        $.getJSON(EBAY_CATEGORY_URL, displayEbayCategoryData);
 }
