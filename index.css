@@ -87,7 +87,8 @@ p {
 }
 
 .category-button {
-	width: 100%;
+	width: 50%;
+	margin-bottom: 10px;
 }
 
 input, textarea {
@@ -227,6 +228,10 @@ section {
 
 textarea {
 	height: 113.5px;
+}
+
+.category-button {
+	width: 100%;
 }
 
 }
