@@ -1,16 +1,34 @@
+/*
+   #ff6506 old site orange
+
+#ff7c2b orange (crayola)
+#f9faf9 ghost white
+#bac1b8 gray x11 gray
+#5d9ebf cerulean frost
+#1a2c35 yankees blue 26 44 53
+
+
+*/
 body {
+	background: #f9faf9;
+	color: #1a2c35 ;
 
 }
 
 header {
-	background: lightblue;
-	border: 2px solid black;
+	background: #f9faf9;
+	color: #1a2c35;
 	height: 75px;
 	position: fixed;
 	width: 100%;
 	top: 0;
 	left: 0;
 	z-index: 95;
+}
+
+
+header .row {
+	margin-bottom: 0;
 }
 
 nav {
@@ -28,43 +46,76 @@ nav {
 
 ul#inv-menu {
 	list-style: none;
-/*	position: absolute;*/
 	bottom: -2px;
 	margin-bottom: 0;	
+
 }
 
-header .row {
-	margin-bottom: 0;
-}
-
-
-li:hover {
-	background: blue;
-}
-
-.nav-link {
+a.nav-link {
 	padding: 5px 10px;
-	height: 100%;
+/*	height: 100%;*/
+	height: 50px;
+	width: 50px;
 	padding-top: 13px;
+	margin-top: 4px;
 	display: block;
 	text-decoration: none;
-	color: black;
+
+	/*color: black;*/
 }
 
-.nav-link:hover {
-	color: white;
+ ul#inv-menu, #inv-nav-main-btn.is-active {
+	background: rgba(26, 44, 53, .8);
+	color: #f9faf9;
+}
+
+ul#inv-menu li a {
+	background: transparent;
+}
+
+#inv-nav-main-btn {
+	background-color: rgba(26, 44, 53, .3);
+	height: 60px;
+	line-height: 50px;
+
+}
+
+#inv-nav-main-btn:hover {
+	background-color: rgba(26, 44, 53, .8);
+}
+
+ul#inv-menu li a:hover {
+	color: #ff7c2b;
+	background: rgba(26, 44, 53, .8);
 }
 
 main {
 	padding-top: 60px;
 }
 
+.landing {
+	background:	 linear-gradient(
+		rgba(37,62,70, .2),
+		rgba(37, 62, 70, .6)),
+	url('https://static.wixstatic.com/media/e3de0633fc9607c1fb1335c40d796247.jpg') center center;
+	background-size: cover;
+	background-repeat: none;
+	color: #f9faf9;
+	height: 400px;
+
+}
+
+h1 {
+	margin-top: 75px;
+}
+
+
 section {
-	border: 2px solid black;
 	text-align: center;
 	padding-bottom: 50px;
-	padding-top: 75px;
+	padding-top: 60px;
 }
+
 
 p {
 	text-align: left;
@@ -76,6 +127,8 @@ p {
 
 .products {
 	text-align: left;
+	background: #5d9ebf;
+	color: #f9faf9;
 }
 
 .products h2 {
@@ -84,11 +137,16 @@ p {
 
 .js-query, button, #search-label {
 	height: 40px;
+	margin-top: 10px;
 }
 
 .category-button {
 	width: 50%;
 	margin-bottom: 10px;
+}
+
+.pageNumDisplay {
+	display: inline-block;
 }
 
 input, textarea {
@@ -107,6 +165,7 @@ textarea {
 	border: 2px solid black;
 	position: relative;
 	height: 350px;
+	margin-bottom: 10px;
 }
 
 .card-image {
@@ -151,6 +210,7 @@ textarea {
 footer {
 	height: 50px;
 	padding-top: 20px;
+	padding-bottom: 10px;
 	text-align: center;
 }
 
@@ -159,26 +219,56 @@ footer {
 }
 
 
-/*Screens smaller than 480px*/
-@media only screen and (max-width: 480px) {
+/*Screens bigger than 400px and smaller than 800px*/
+@media screen and (min-width: 400px) {
+	.landing {
+		height: 500px;
+	}
+
+	.landing h1 {
+		margin-top: 160px;
+	}
+
+	.col-3 {
+		width: 50%;
+	}
+
+	.category-button {
+		width: 100%;
+	}
+
 	.card {
-		margin-bottom: 10px;
+		height: 300px;
 	}
 
-	button {
-		margin-top: 10px;
+	.card h4 {
+		padding: 10px;
 	}
 
-	section {
-		padding-top: 60px;
+	.card-image {
+		height: 150px;
+		margin-top: 20%;
 	}
 
-	footer {
-		padding-bottom: 10px;
+/*		ul#inv-menu li {
+		height: 50px;
+		display: inline-block;
+		float: left;
+	}*/
+/*
+	ul#inv-menu li a {
+		padding: 0 10px;
+		line-height: 50px;
+		position: relative;
+		bottom: 0;
 	}
+*/
+
+
 }
 
-/*Screens bigger than 768px*/
+
+/*Screens bigger than 800px*/
 @media screen and (min-width: 768px) {
 
 .logo {
@@ -188,50 +278,51 @@ footer {
 }
 
 ul#inv-menu {
-   height: 50px;
+    height: 50px;
     position: absolute;
     right: 30px;
     bottom: 0;  
 }
 
-li {
-	display: inline-block;
-	height: 50px;
-	float: left;
+
+ul#inv-menu li a {
+	color: #1a2c35;
+	/*padding: 0 20px;*/
+	line-height: 50px;
 }
 
 .row, .col-12 {
 	height: 100%;
 }
 
-#inv-menu li {
-	height: 50px;
-}
-
-.nav-link {
-	position: relative;
-	bottom: 0;
-}
-
-ul#inv-menu li a {
-	line-height: 50px;
+.col-3 {
+	width: 25%;
 }
 
 .card-image {
-	height: 180px;
-	margin-top: 30%;
+	height: 120px;
+	margin-top: 40%;
+}
+
+.card h4 {
+	padding: 0;
 }
 
 section {
-	padding-top: 100px;
+	padding-top: 75px;
+}
+
+.landing {
+	height: 630px;
+}
+
+.landing h1 {
+	margin-top: 200px;
 }
 
 textarea {
 	height: 113.5px;
 }
 
-.category-button {
-	width: 100%;
-}
 
 }

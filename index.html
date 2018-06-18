@@ -6,7 +6,6 @@
 		<meta name="viewport" content="width=device-width">
 		<title>Southwest Construction Parts</title>
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.css" rel="stylesheet">
-		
     <link rel="stylesheet" type="text/css" href="float-grid.css">
     <link rel="stylesheet" href="https://cdn.rawgit.com/InventPartners/flex-responsive-burger-menu/master/css/nav.min.css" />
     <link rel="stylesheet" type="text/css" href="index.css">
@@ -22,10 +21,10 @@
             </a>
             <ul class="navbar-list right" id="inv-menu">
               <li><a href="#products" class="nav-link">Products</a></li>
-              <li><a href="#eBay" class="nav-link">eBay Store</a></li>
+              <li><a href="#eBay" class="nav-link"><i class="fab fa-ebay fa-3x"></i></a></li>
               <li><a href="#location" class="nav-link">Location</a></li>
               <li><a href="#contact" class="nav-link">Contact</a></li>
-              <li><a href="tel:5555555555" class="nav-link">Call Us: 5059488497</a></li>
+              <li><a href="tel:5555555555" class="nav-link"><i class="fas fa-phone"></i> 505-948-8497</a></li>
             </ul> 
           </nav>
          </div>
@@ -100,6 +99,11 @@
         </div>
          <div class="search-results"></div>
         <div class="nextForm"></div>
+        <div class="pageButtons row">
+          <button class="pageButton hidden" id="prevButton"><i class="fas fa-angle-double-left"></i></button>
+          <p class='pageNumDisplay'></p>
+          <button class="pageButton hidden" id="nextButton"><i class="fas fa-angle-double-right"></i></button>
+        </div>
       </section>
       <section class="location" id="location">
         <div class="row">
@@ -156,9 +160,9 @@
 	</body>
 
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-
 <script src="https://cdn.rawgit.com/InventPartners/flex-responsive-burger-menu/master/js/nav.min.js"></script>
- <script src="index.js"></script>
+<script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe" crossorigin="anonymous"></script>
+<script src="index.js"></script>
 <script 
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCTuBqNBkXAeayZk1OcXaUGRoMdhGvK66I&callback=initMap">
     </script>

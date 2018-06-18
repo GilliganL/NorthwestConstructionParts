@@ -1,12 +1,15 @@
 
+const state = {
+    pageNum: 1,
+    searchTerm: '',
+    category: '' 
+}
 
 
+function getDataFromApi(searchTerm) {
+const EBAY_SEARCH_URL = `https://svcs.ebay.com/services/search/FindingService/v1?SECURITY-APPNAME=LynseyPo-SWCWebsi-PRD-e2ccf98b2-a9811a7d&OPERATION-NAME=findItemsIneBayStores&SERVICE-VERSION=1.0.0&RESPONSE-DATA-FORMAT=JSON&keywords=${state.searchTerm}&storeName=diggersupply&GLOBAL-ID=EBAY-US&siteid=0&paginationInput.entriesPerPage=12&paginationInput.pageNumber=${state.pageNum}&callback=?`;
 
-function getDataFromApi(searchTerm, callback) {
-const EBAY_SEARCH_URL = `https://svcs.ebay.com/services/search/FindingService/v1?SECURITY-APPNAME=LynseyPo-SWCWebsi-PRD-e2ccf98b2-a9811a7d&OPERATION-NAME=findItemsIneBayStores&SERVICE-VERSION=1.0.0&RESPONSE-DATA-FORMAT=JSON&keywords=${searchTerm}&storeName=diggersupply&GLOBAL-ID=EBAY-US&siteid=0&paginationInput.entriesPerPage=12&paginationInput.pageNumber=1&callback=?`;
-  
-  $.getJSON(EBAY_SEARCH_URL, callback);
-  console.log('getDataFromApi ran');
+  $.getJSON(EBAY_SEARCH_URL, displayEbayData);
 }
 
 function renderResult(result, index) {
@@ -16,13 +19,13 @@ function renderResult(result, index) {
   let j = 1;
   while (j < 12) {
     newRow.push(j);
-    j += 3;
+    j += 4;
   }   
   // div html template
   let currentPrice = parseFloat(`${result.sellingStatus[0].currentPrice[0].__value__}`);
   let displayPrice = currentPrice.toFixed(2);
 
-  let template = `<div class="col-4">
+  let template = `<div class="col-3">
     <div class="card">
     <h4 id="cardh4">${result.title}</h4>
     <a class="js-result-name" href="${result.viewItemURL}" target="_blank">
@@ -37,54 +40,61 @@ function renderResult(result, index) {
     template = `<div class="row">` + template;
   }
   // add ending tag to last item in row
-  if (indexNum % 3 === 0) {
+  if (indexNum % 4 === 0) {
     template += `</div>`;
   }
   return template;
 }
 
-function displayEbaySearchData(data) {
-  try {
-      const resultArray = data.findItemsIneBayStoresResponse[0].searchResult[0].item;
-      const results = resultArray.map((item, index) => renderResult(item, index));
-      //join array of stings into one string and add to .search-results div
-      $('.search-results').html(results.join(''));
-    } catch {
-        $('.search-results').html('<h4>Please enter a valid search term</h4>');
-    }
-  }
+
 
 
 //watch submit of eBay search button
 function watchEbaySubmit() {
   $('.ebay-form').submit(event => {
     event.preventDefault();
+    state.category = '';
     const queryTarget = $(event.currentTarget).find('.js-query');
-    const query = queryTarget.val();
+    state.searchTerm = queryTarget.val();
     queryTarget.val("");
-    // $('.categories').addClass('hidden');
-    getDataFromApi(query, displayEbaySearchData);
+    $('.js-query').attr('placeholder', state.searchTerm);
+    
+
+    getDataFromApi(state.searchTerm, displayEbayData);
   });
 }
 
 
-function displayEbayCategoryData(data) {
+function displayEbayData(data) {
+  if (data.findItemsByCategoryResponse) {
+        array = data.findItemsByCategoryResponse
+  } else {
+      array = data.findItemsIneBayStoresResponse
+  }
+
   try {
-      const resultArray = data.findItemsByCategoryResponse[0].searchResult[0].item;
+      const resultArray = array[0].searchResult[0].item;
       const results = resultArray.map((item, index) => renderResult(item, index));
-      //join array of stings into one string and add to .search-results div
+      //join array of stings into one string and add to .search-results div      
       $('.search-results').html(results.join(''));
-    } catch {
-        $('.search-results').html('<h4>Please call us about this item</h4>');
+      $('.pageNumDisplay').html(`Page ${state.pageNum}`);
+      if(state.pageNum == 1) {
+        $('#prevButton').addClass('hidden');
+        $('#nextButton').removeClass('hidden');
+      } else {
+        $('#prevButton').removeClass('hidden');
+        $('#nextButton').removeClass('hidden');
+      } } catch {
+        $('.search-results').html('<h4>Please try another search</h4>');
     }
   }
 
 function getCategoryDataFromEbay(category) {
   console.log(category);
 
-   const EBAY_CATEGORY_URL=`https://svcs.ebay.com/services/search/FindingService/v1?OPERATION-NAME=findItemsByCategory&SERVICE-VERSION=1.0.0&SECURITY-APPNAME=LynseyPo-SWCWebsi-PRD-e2ccf98b2-a9811a7d&RESPONSE-DATA-FORMAT=JSON&REST-PAYLOAD&categoryId=${category}&itemFilter(0).name=Seller&itemFilter(0).value(0)=diggersupply&paginationInput.entriesPerPage=12&paginationInput.pageNumber=1&callback=?`;
+   const EBAY_CATEGORY_URL=`https://svcs.ebay.com/services/search/FindingService/v1?OPERATION-NAME=findItemsByCategory&SERVICE-VERSION=1.0.0&SECURITY-APPNAME=LynseyPo-SWCWebsi-PRD-e2ccf98b2-a9811a7d&RESPONSE-DATA-FORMAT=JSON&REST-PAYLOAD&categoryId=${state.category}&itemFilter(0).name=Seller&itemFilter(0).value(0)=diggersupply&paginationInput.entriesPerPage=12&paginationInput.pageNumber=${state.pageNum}&callback=?`;
    
-       $.getJSON(EBAY_CATEGORY_URL, displayEbayCategoryData);
+       $.getJSON(EBAY_CATEGORY_URL, displayEbayData);
 }
 
 
@@ -93,13 +103,37 @@ function listenForCategoryButton() {
   $('.category-button').click(event => {
 
         event.preventDefault();
+        state.searchTerm = '';
         const buttonPushed = $(event.currentTarget);
-        const queryCategory = buttonPushed.data().value;
+        state.category = buttonPushed.data().value;
 
-        getCategoryDataFromEbay(queryCategory);
+        getCategoryDataFromEbay(state.category);
 });
 }
 
+function handlePageButtons() {
+  console.log('handlePageButtons ran');
+  $('#prevButton').click(event => {
+      event.preventDefault();
+      makePagination(-1);
+  });
+  $('#nextButton').click(event => {
+      event.preventDefault();
+      makePagination(1);
+  });
+}
+
+
+function makePagination(step) {
+
+   state.pageNum += step;
+    if (state.category) {
+      getCategoryDataFromEbay(state.category);
+    } else {
+      console.log(state.pageNum)
+      getDataFromApi(state.searchTerm);
+    }
+}
 
 
 function initMap() {
@@ -112,10 +146,12 @@ function initMap() {
   var marker = new google.maps.Marker({position: uluru, map: map});
 }
 
+
 function handleStartPage() {
   initMap();
   watchEbaySubmit();
   listenForCategoryButton();
+  handlePageButtons();
 }
 
 $(handleStartPage);
