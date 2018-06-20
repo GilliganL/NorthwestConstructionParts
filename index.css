@@ -7,34 +7,87 @@
 #5d9ebf cerulean frost
 #1a2c35 yankees blue 26 44 53
 
+font-family: 'Roboto', sans-serif;
+font-family: 'Roboto Slab', serif;
+
 
 */
 body {
 	background: #f9faf9;
 	color: #1a2c35 ;
+	font-family: 'Roboto', sans-serif;
+	font-weight: normal;
 
 }
 
 header {
-	background: #f9faf9;
-	color: #1a2c35;
-	height: 75px;
-	position: fixed;
 	width: 100%;
-	top: 0;
-	left: 0;
 	z-index: 95;
+	display: block; 
+	
+}
+
+h1, h2, h3, h4, header, .landing {
+	font-family: 'Roboto Slab', serif;
+	font-weight: normal;
 }
 
 
-header .row {
-	margin-bottom: 0;
+.landing {
+	background:	 linear-gradient(
+		rgba(37,62,70, .3),
+		rgba(37, 62, 70, .6)),
+	url('https://static.wixstatic.com/media/e3de0633fc9607c1fb1335c40d796247.jpg') center center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	color: #f9faf9;
+	/*height: 400px;*/
+	padding-top: 12em;
+	/*padding-bottom: 10em;*/
+
 }
 
-nav {
-	margin-top: 8px;
-	min-height: 50px;
-	max-height: 75px;
+h1 {
+	font-size: 2em;
+	line-height: 150%;
+	margin: 0;
+	font-weight: bold;
+}
+
+h2 {
+	font-size: 1.5em;
+	line-height: 150%;
+	margin: 0;
+	padding: 0 5px;
+}
+
+.landing p {
+	font-size: 1em;
+}
+
+
+ul#inv-menu {
+	background: rgba(26, 44, 53, .9);
+	color: #f9faf9;
+	
+}
+
+ul#inv-menu li {
+	
+}
+
+ul#inv-menu li a {
+
+	font-size: 1.5em;
+	line-height: 2em;
+	background: transparent;
+	color: #f9faf9;
+
+}
+
+#inv-nav-main-btn.is-active {
+	background: rgba(26, 44, 53, .9);
+	color: #f9faf9;
 }
 
 .logo {
@@ -42,80 +95,30 @@ nav {
 	position: absolute;
 	left: 50px;
 	top: 0;
-}
-
-ul#inv-menu {
-	list-style: none;
-	bottom: -2px;
-	margin-bottom: 0;	
-
-}
-
-a.nav-link {
-	padding: 5px 10px;
-/*	height: 100%;*/
-	height: 50px;
-	width: 50px;
-	padding-top: 13px;
-	margin-top: 4px;
-	display: block;
-	text-decoration: none;
-
-	/*color: black;*/
-}
-
- ul#inv-menu, #inv-nav-main-btn.is-active {
-	background: rgba(26, 44, 53, .8);
-	color: #f9faf9;
-}
-
-ul#inv-menu li a {
-	background: transparent;
+	vertical-align
 }
 
 #inv-nav-main-btn {
-	background-color: rgba(26, 44, 53, .3);
+	background-color: rgba(26, 44, 53, .6);
 	height: 60px;
 	line-height: 50px;
 
 }
 
 #inv-nav-main-btn:hover {
-	background-color: rgba(26, 44, 53, .8);
+	background-color: rgba(26, 44, 53, .9);
 }
 
 ul#inv-menu li a:hover {
 	color: #ff7c2b;
-	background: rgba(26, 44, 53, .8);
+	background: transparent;
 }
-
-main {
-	padding-top: 60px;
-}
-
-.landing {
-	background:	 linear-gradient(
-		rgba(37,62,70, .2),
-		rgba(37, 62, 70, .6)),
-	url('https://static.wixstatic.com/media/e3de0633fc9607c1fb1335c40d796247.jpg') center center;
-	background-size: cover;
-	background-repeat: none;
-	color: #f9faf9;
-	height: 400px;
-
-}
-
-h1 {
-	margin-top: 75px;
-}
-
 
 section {
 	text-align: center;
 	padding-bottom: 50px;
 	padding-top: 60px;
 }
-
 
 p {
 	text-align: left;
@@ -219,14 +222,69 @@ footer {
 }
 
 
-/*Screens bigger than 400px and smaller than 800px*/
+/*Screens bigger than 400px and smaller than 768px*/
 @media screen and (min-width: 400px) {
+
 	.landing {
-		height: 500px;
+		padding-top: 15em;
+		padding-bottom: 12em;
 	}
 
 	.landing h1 {
-		margin-top: 160px;
+		font-size: 3em;
+		line-height: 150%;
+		margin: 0;
+	}
+
+	.landing h2 {
+		font-size: 2em;
+		line-height: 150%;
+		margin: 0;
+	}
+
+	nav.nav-bar {
+		display: block;
+		padding-top: 1em;
+		padding-bottom: 1em;
+		height: 3em;
+		width: 100%;
+		position: relative;
+		display: block;
+		margin-top: -3.5em;
+		opacity: .8;
+		background: #f9faf9;
+	}
+
+	ul#inv-menu {
+		position: absolute;
+		display: block;
+		margin: 0 auto;
+		list-style: none;
+		width: 45%;
+		right: 2%;
+		z-index: 1000;
+		display: flex;
+	    flex-direction: row;
+	    justify-content: space-between;
+	    background: transparent;
+	
+	}
+
+	ul#inv-menu li a {
+		display: block;
+		text-decoration: none;
+		background: transparent;
+		color: #1a2c35;	
+		padding: 0;
+		font-size: medium;
+		line-height: normal;
+
+	}
+
+	ul#inv-menu li:hover {
+		color: #ff7c2b;
+		opacity: .8;
+		background: #f9faf9;
 	}
 
 	.col-3 {
@@ -249,22 +307,6 @@ footer {
 		height: 150px;
 		margin-top: 20%;
 	}
-
-/*		ul#inv-menu li {
-		height: 50px;
-		display: inline-block;
-		float: left;
-	}*/
-/*
-	ul#inv-menu li a {
-		padding: 0 10px;
-		line-height: 50px;
-		position: relative;
-		bottom: 0;
-	}
-*/
-
-
 }
 
 
@@ -277,19 +319,6 @@ footer {
 	width: 13%;
 }
 
-ul#inv-menu {
-    height: 50px;
-    position: absolute;
-    right: 30px;
-    bottom: 0;  
-}
-
-
-ul#inv-menu li a {
-	color: #1a2c35;
-	/*padding: 0 20px;*/
-	line-height: 50px;
-}
 
 .row, .col-12 {
 	height: 100%;
@@ -312,13 +341,13 @@ section {
 	padding-top: 75px;
 }
 
-.landing {
+/*.landing {
 	height: 630px;
 }
 
 .landing h1 {
 	margin-top: 200px;
-}
+}*/
 
 textarea {
 	height: 113.5px;

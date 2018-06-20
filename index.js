@@ -46,9 +46,6 @@ function renderResult(result, index) {
   return template;
 }
 
-
-
-
 //watch submit of eBay search button
 function watchEbaySubmit() {
   $('.ebay-form').submit(event => {
@@ -63,7 +60,6 @@ function watchEbaySubmit() {
     getDataFromApi(state.searchTerm, displayEbayData);
   });
 }
-
 
 function displayEbayData(data) {
   if (data.findItemsByCategoryResponse) {
@@ -134,6 +130,10 @@ function makePagination(step) {
       getDataFromApi(state.searchTerm);
     }
 }
+
+//on scroll add display fixed to nav bar when it's at the top
+//remove when you scroll past it going up
+//move hamburger menu too
 
 
 function initMap() {
