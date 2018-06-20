@@ -95,7 +95,6 @@ ul#inv-menu li a {
 	position: absolute;
 	left: 50px;
 	top: 0;
-	vertical-align
 }
 
 #inv-nav-main-btn {
@@ -130,12 +129,24 @@ p {
 
 .products {
 	text-align: left;
-	background: #5d9ebf;
-	color: #f9faf9;
 }
 
 .products h2 {
 	text-align: center;
+	margin: 20px 0;
+}
+
+.product-card {
+	height: 375px;
+	background: rgba(26, 44, 53, .9);
+	color: #f9faf9;
+	border-radius: 25px;
+	padding: 5px 10px;
+}
+
+.eBay {
+	background: #5d9ebf;
+	color: #f9faf9;
 }
 
 .js-query, button, #search-label {
@@ -165,10 +176,12 @@ textarea {
 .card {
 	text-align: left;
 	padding: 10px;
-	border: 2px solid black;
+	border-radius: 20px;
 	position: relative;
 	height: 350px;
 	margin-bottom: 10px;
+	background: #f9faf9;
+	color: #1a2c35;
 }
 
 .card-image {
@@ -242,6 +255,13 @@ footer {
 		margin: 0;
 	}
 
+	.logo {
+		z-index: 100;
+	/*	top: 468px;*/
+		width: 18%
+
+	}
+
 	nav.nav-bar {
 		display: block;
 		padding-top: 1em;
@@ -262,7 +282,7 @@ footer {
 		list-style: none;
 		width: 45%;
 		right: 2%;
-		z-index: 1000;
+		z-index: 95;
 		display: flex;
 	    flex-direction: row;
 	    justify-content: space-between;
@@ -277,6 +297,7 @@ footer {
 		color: #1a2c35;	
 		padding: 0;
 		font-size: medium;
+		font-weight: bold;
 		line-height: normal;
 
 	}
@@ -316,7 +337,7 @@ footer {
 .logo {
 	margin-top: -15px;
 	left: 25px;
-	width: 13%;
+	/*width: %;*/
 }
 
 
