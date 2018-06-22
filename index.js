@@ -31,7 +31,7 @@ function renderResult(result, index) {
     <a class="js-result-name" href="${result.viewItemURL}" target="_blank">
     <img src="${result.galleryURL}" alt="eBay item no. ${result.itemID}: ${result.title}" class="card-image">
     </a>
-   <p>Category:<br> ${result.primaryCategory[0].categoryName[0]}<br>
+   <p>Category: ${result.primaryCategory[0].categoryName[0]}<br>
       Current Price: $${displayPrice}</p>
     </div>
    </div>`;
@@ -81,7 +81,7 @@ function displayEbayData(data) {
         $('#prevButton').removeClass('hidden');
         $('#nextButton').removeClass('hidden');
       } } catch {
-        $('.search-results').html('<h4>Please try another search</h4>');
+        $('.search-results').html('<h4>Please contact us for this product</h4>');
     }
   }
 
@@ -119,7 +119,6 @@ function handlePageButtons() {
   });
 }
 
-
 function makePagination(step) {
 
    state.pageNum += step;
@@ -131,10 +130,18 @@ function makePagination(step) {
     }
 }
 
-//on scroll add display fixed to nav bar when it's at the top
-//remove when you scroll past it going up
-//move hamburger menu too
+function watchScroll() {
+  $(document).scroll(function() {
+    if(window.scrollY >= 570) {
+      $('nav').addClass('fixed');
+      $('.nav-name').removeClass('hidden');
+    } else {
+      $('nav').removeClass('fixed');
+      $('.nav-name').addClass('hidden');
+    }
 
+  });
+}
 
 function initMap() {
   // The location of Uluru
@@ -149,6 +156,7 @@ function initMap() {
 
 function handleStartPage() {
   initMap();
+  watchScroll();
   watchEbaySubmit();
   listenForCategoryButton();
   handlePageButtons();

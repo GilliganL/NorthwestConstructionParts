@@ -6,6 +6,7 @@
 		<meta name="viewport" content="width=device-width">
 		<title>Southwest Construction Parts</title>
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" type="text/css" href="float-grid.css">
     <link rel="stylesheet" href="https://cdn.rawgit.com/InventPartners/flex-responsive-burger-menu/master/css/nav.min.css" />
     <link rel="stylesheet" type="text/css" href="index.css">
@@ -19,24 +20,23 @@
             <h2>Heavy Equipment Replacement Parts</h2>
             <p class="p-center">Serving New Mexico and surrounding communities</p>
       </section>
-         
-
           <nav role="navigation" class="nav-bar">
-            <div class="logo-class">
-              <a href='#top' class="logo-link">
+            <div class="nav-name hidden">
+              <h2>Southwest Construction Parts</h2>
+            </div>
+            <div class="logo-class animated slideInLeft">
+             
+            <ul class="navbar-list right" id="inv-menu">
+               <a href='#top' class="logo-link animated fadeOut">
                 <img src="images/trucking.svg" alt="Southwest Construction Parts Logo" class="logo">
               </a>
-            </div>
-            <ul class="navbar-list right" id="inv-menu">
               <li><a href="#products" class="nav-link">Products</a></li>
-              <li><a href="#eBay" class="nav-link">eBay
-               <!--  <i class="fab fa-ebay fa-3x"></i> -->
-              </a>
-              </li>
+              <li><a href="#eBay" class="nav-link">eBay</a></li>
               <li><a href="#location" class="nav-link">Location</a></li>
               <li><a href="#contact" class="nav-link">Contact</a></li>
               <li><a href="tel:5555555555" class="nav-link"><i class="fas fa-phone"></i> 505-948-8497</a></li>
             </ul> 
+           </div>
           </nav>         
 
       <button type="button" id="inv-nav-main-btn" class="hamburger right">
@@ -46,9 +46,7 @@
         <span class="text">Menu</span>
       </button>
     </header>
- 
 		<main role="main">
-
       <section class="products" id="products">
         <div class="row">
           <div class="col-12">
@@ -57,21 +55,21 @@
         </div>
         <div class="row">
           <div class="col-4">
-            <div class="product-card">
+            <div class="product-card animated fadeIn">
             <h3>Quality, Warranty Backed Parts</h3>
             <p>We carry factory new parts for Barber, Blaw Knox, Broce, Cat, Case, Greene, Deere,Komatsu, Volvo, and many others</p>
             <p>Authorized dealer for Black Cat Blades, Bucyrus Blades, ESCO, H-E Parts, ITR/Metaris, Kennametal, Pengo, and other quality manufacturers.</p>
           </div>
         </div>
           <div class="col-4">
-            <div class="product-card">
+            <div class="product-card animated fadeIn">
             <h3>Service Area</h3>
-            <p>Based in Albuquerque, our sales team travels throughout New Mexico and the surrounding areass. We stock most of the common parts at our warehouse and can ship or deliver to your location.</p>
-            <p>Specialty parts can be ordered from our wide network of manufacturers. We belong to a network of dealers across North America that can locate used, rebuilt, and new components including pins, bushings, cylinders, engines, transmissions, turbos, and floor and equipment attachments such as forks and buckets.</p>
+            <p>Based in Albuquerque, our sales team travels throughout New Mexico and the surrounding areas. We stock most of the common parts at our warehouse and can ship or deliver to your location.</p>
+            <p>Specialty parts can be ordered from our wide network of manufacturers. We belong to a network of dealers across North America that can locate used, rebuilt, and new components.</p>
           </div>
         </div>
           <div class="col-4">
-            <div class="product-card">
+            <div class="product-card animated fadeIn">
             <h3>Customer Service</h3>
             <p>We deliver high quality customer service and parts at a reasonable price. We offer competitive prices. Call us today for quote and see how we can support your business. We look forward to working with you! </p>
           </div>
@@ -83,6 +81,10 @@
           <div class="col-12">
             <h2>Search Our eBay Store</h2>
             <h3>Stocked with thousands of items and actively updated</h3>
+          </div>
+        </div>
+         <div class="row">
+          <div class="col-12">
             <form class="ebay-form" action="#">
               <label for="js-query" id="search-label"></label>
               <input type="text" class="js-query" placeholder="Search eBay Inventory" required>
@@ -91,26 +93,24 @@
           </div>
         </div>
         <div class="categories">
+          <h3>Search by Category</h3>
           <div class="row">
-            <h3>Search by Category</h3>
-
-              <div class="col-4">
-                <button type="button" class="category-button" id="category-button1" data-value="66927">Augers</button>
-              </div>
-              <div class="col-4">
-                <button type="button" class="category-button" id="category-button2" data-value="50908">Buckets &amp; Accessories</button>
-              </div>
-              <div class="col-4">
-                <button type="button" class="category-button" id="category-button3" data-value="41490">Constuction Equipment Parts</button>
-              </div>
-
+            <div class="col-4">
+              <button type="button" class="category-button" id="category-button1" data-value="66927">Augers</button>
             </div>
+            <div class="col-4">
+              <button type="button" class="category-button" id="category-button2" data-value="50908">Buckets &amp; Accessories</button>
+            </div>
+            <div class="col-4">
+              <button type="button" class="category-button" id="category-button3" data-value="41490">Constuction Equipment Parts</button>
+            </div>
+          </div>
         </div>
-         <div class="search-results"></div>
+        <div class="search-results"></div>
         <div class="nextForm"></div>
         <div class="pageButtons row">
           <button class="pageButton hidden" id="prevButton"><i class="fas fa-angle-double-left"></i></button>
-          <p class='pageNumDisplay'></p>
+          <h5 class='pageNumDisplay'></h5>
           <button class="pageButton hidden" id="nextButton"><i class="fas fa-angle-double-right"></i></button>
         </div>
       </section>
@@ -144,31 +144,35 @@
       <section class="contact" id="contact">
         <h2 id="contacth2">Contact Us for a Quote or More Information</h2>
           <div class="row">
-           <form action="https://formspree.io/lynseympowell@gmail.com"
-              method="POST">
             <div class="col-6">
+              <form class="contact-form" action="https://formspree.io/lynseympowell@gmail.com"
+              method="POST">
               <input type="text" name="name" placeholder="Name" required>
-              <input type="text" name="company" placeholder="Company">
               <input type="email" name="_replyto" placeholder="Email Address" required>
               <input type="tel" name="telephone" placeholder="555-555-5555">
-            </div>
-            <div class="col-6">
               <textarea name="message" placeholder="Your message here"></textarea> 
               <input type="hidden" name="_subject" value="New Contact"/>
               <input type="text" name="_gotcha" id="gotcha"/>
               <input type="submit" value="Send">
-             </div>
-          </form> 
-        </div>
+            </form> 
+          </div>
+          <div class="col-6">
+            <img class="building-pic" src="https://static.wixstatic.com/media/2ec247_3aa234eec4a843d18c6ef7d02defb5d7~mv2.jpg" alt="Southwest Constuction Parts Building">
+          </div>
+        </div>  
       </section>
-   
     </main>
     <footer>
-      <div>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+      <div class="me">Created by Lynsey Powell</div>
+      <div class="citation">Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
     </footer>
 	</body>
 
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script
+  src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+  integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+  crossorigin="anonymous"></script>
 <script src="https://cdn.rawgit.com/InventPartners/flex-responsive-burger-menu/master/js/nav.min.js"></script>
 <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe" crossorigin="anonymous"></script>
 <script src="index.js"></script>
