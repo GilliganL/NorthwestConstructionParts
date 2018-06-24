@@ -415,11 +415,11 @@ button:focus {
 	.logo-class {
 		-webkit-animation-duration: 5s;
 		-moz-animation-duration: 5s;
-		-o-animation-duration: 5s;
+		-ms-animation-duration: 5s;
 		animation-duration: 5s;
 		-webkit-animation-delay: 1s;
 		-moz-animation-delay: 1s;
-		-o-animation-delay: 1s;
+		-ms-animation-delay: 1s;
 		animation-delay: 1s;
 
 	}
@@ -427,29 +427,29 @@ button:focus {
 	.animated {
 	    -webkit-animation-duration: 5s;
 	    -moz-animation-duration: 5s;
-		-o-animation-duration: 5s;
+		-ms-animation-duration: 5s;
 	    animation-duration: 5s;
 	    -webkit-animation-fill-mode: both;
 	    -moz-animation-fill-mode: both;
-		-o-animation-fill-mode: both;
+		-ms-animation-fill-mode: both;
 	    animation-fill-mode: both;
 	}
 
 	.logo-link {
 		-webkit-animation-delay: 6s;
 		-moz-animation-delay: 6s;
-		-o-animation-delay: 6s;
+		-ms-animation-delay: 6s;
 		animation-delay: 6s;
 		-webkit-animation-duration: 1s;
 		-moz-animation-duration: 1s;
-		-o-animation-duration: 1s;
+		-ms-animation-duration: 1s;
 		animation-duration: 1s;
 	}	
 
 	#logo-link2 {
 		-webkit-animation-delay: 2s;
 		-moz-animation-delay: 2s;
-		-o-animation-delay: 2s;
+		-ms-animation-delay: 2s;
 		animation-delay: 2s;
 	}
 
