@@ -77,13 +77,6 @@ h5 {
 	color: #f9faf9;
 }
 
-.animated {
-     -webkit-animation-duration: 0s; 
-      animation-duration: 0s; 
-     -webkit-animation-fill-mode: none; 
-     animation-fill-mode: none; 
-}
-
 ul#inv-menu {
 	background: rgba(26, 44, 53, .9);
 	color: #f9faf9;	
@@ -408,18 +401,18 @@ button:focus {
 		display: block;
 		width: 200px;
 		position: absolute;
-		left: -160px;
+		left: -165px;
 		top: -103px;
 	}
 
 	.logo-class {
 		-webkit-animation-duration: 5s;
 		-moz-animation-duration: 5s;
-		-ms-animation-duration: 5s;
+		-MS-animation-duration: 5s;
 		animation-duration: 5s;
 		-webkit-animation-delay: 1s;
 		-moz-animation-delay: 1s;
-		-ms-animation-delay: 1s;
+		-MS-animation-delay: 1s;
 		animation-delay: 1s;
 
 	}
@@ -427,30 +420,30 @@ button:focus {
 	.animated {
 	    -webkit-animation-duration: 5s;
 	    -moz-animation-duration: 5s;
-		-ms-animation-duration: 5s;
+		-MS-animation-duration: 5s;
 	    animation-duration: 5s;
 	    -webkit-animation-fill-mode: both;
 	    -moz-animation-fill-mode: both;
-		-ms-animation-fill-mode: both;
+		-MS-animation-fill-mode: both;
 	    animation-fill-mode: both;
 	}
 
 	.logo-link {
 		-webkit-animation-delay: 6s;
 		-moz-animation-delay: 6s;
-		-ms-animation-delay: 6s;
+		-MS-animation-delay: 6s;
 		animation-delay: 6s;
 		-webkit-animation-duration: 1s;
 		-moz-animation-duration: 1s;
-		-ms-animation-duration: 1s;
+		-MS-animation-duration: 1s;
 		animation-duration: 1s;
 	}	
 
 	#logo-link2 {
-		-webkit-animation-delay: 2s;
-		-moz-animation-delay: 2s;
-		-ms-animation-delay: 2s;
-		animation-delay: 2s;
+		-webkit-animation-delay: 1s;
+		-moz-animation-delay: 1s;
+		-MS-animation-delay: 1s;
+		animation-delay: 1s;
 	}
 
 	nav.nav-bar {

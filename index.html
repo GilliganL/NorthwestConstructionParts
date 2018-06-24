@@ -21,12 +21,12 @@
       </section>
       <nav role="navigation" class="nav-bar">
         <div class="nav-name hidden">
-          <h2><a href='#top' class="logo-link animated fadeIn" id="logo-link2" role="logo">Northwest Construction Parts</a></h2>
+          <h2><a href='#top' class="logo-link" id="logo-link2" role="logo">Northwest Construction Parts</a></h2>
         </div>
         <div class="logo-class animated slideInLeft">
           <ul class="navbar-list right" id="inv-menu">
             <li><a href='#top' class="logo-link animated fadeOut">
-              <img src="images/trucking.svg" alt="Northwest Construction Parts Logo" class="logo">
+              <img src="images/trucking.svg" alt="Northwest Construction Parts Logo" class="logo logo-link animated fadeOut"  id="logo-link1">
             </a></li>
             <li><a href="#products" class="nav-link">Products</a></li>
             <li><a href="#eBay" class="nav-link">eBay</a></li>
@@ -79,9 +79,9 @@
             <h2>Search Our eBay Store</h2>
           </div>
         </div>
-        <div class="row">
-          <div class="col-12">
-            <form class="ebay-form" action="#" role="search">
+          <form class="ebay-form" action="#" role="search">
+            <div class="row">
+              <div class="col-12">
               <label for="js-query"><h3>Stocked with thousands of items and actively updated</h3></label>
             </div>
           </div>
@@ -89,9 +89,9 @@
             <div class="col-12">
               <input type="text" class="js-query" id="js-query" placeholder="Search eBay Inventory" required>
               <button type="submit" id="search-button">Search</button>
-            </form>
+            </div>
           </div>
-        </div>
+        </form>
         <div class="categories">
           <h3>Search by Category</h3>
           <div class="row">

@@ -10,6 +10,14 @@ function getDataFromApi(searchTerm) {
 const EBAY_SEARCH_URL = `https://svcs.ebay.com/services/search/FindingService/v1?SECURITY-APPNAME=LynseyPo-SWCWebsi-PRD-e2ccf98b2-a9811a7d&OPERATION-NAME=findItemsIneBayStores&SERVICE-VERSION=1.0.0&RESPONSE-DATA-FORMAT=JSON&keywords=${state.searchTerm}&storeName=diggersupply&GLOBAL-ID=EBAY-US&siteid=0&paginationInput.entriesPerPage=12&paginationInput.pageNumber=${state.pageNum}&callback=?`;
 
   $.getJSON(EBAY_SEARCH_URL, displayEbayData);
+
+}
+
+function displayError(err) {
+
+    const errorMessage = '<h4>Please contact us for this product</h4>'
+    $('.search-results').prop('hidden', false).html(errorMessage);
+
 }
 
 function renderResult(result, index) {
@@ -82,10 +90,10 @@ function displayEbayData(data) {
       } else {
         $('#prevButton').removeClass('hidden');
         $('#nextButton').removeClass('hidden');
-      } } 
-
-      catch {
-        $('.search-results').html('<h4>Please contact us for this product</h4>');
+      } 
+    }
+      catch(err) {
+        displayError(err);
     }
   }
 
