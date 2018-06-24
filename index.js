@@ -5,7 +5,7 @@ const state = {
     category: '' 
 }
 
-
+//access eBay api for user generated search
 function getDataFromApi(searchTerm) {
 const EBAY_SEARCH_URL = (`https://svcs.ebay.com/services/search/FindingService/v1?SECURITY-APPNAME=LynseyPo-SWCWebsi-PRD-e2ccf98b2-a9811a7d&OPERATION-NAME=findItemsIneBayStores&SERVICE-VERSION=1.0.0&RESPONSE-DATA-FORMAT=JSON&keywords=${state.searchTerm}&storeName=diggersupply&GLOBAL-ID=EBAY-US&siteid=0&paginationInput.entriesPerPage=12&paginationInput.pageNumber=${state.pageNum}&callback=?`);
 
@@ -13,6 +13,7 @@ const EBAY_SEARCH_URL = (`https://svcs.ebay.com/services/search/FindingService/v
 
 }
 
+//Display error message with invalid search or item not in eBay inventory
 function displayError(err) {
 
     const errorMessage = '<h4>Please contact us for this product</h4>'
@@ -71,6 +72,7 @@ function watchEbaySubmit() {
 }
 
 function displayEbayData(data) {
+  //set array per type of search
   if (data.findItemsByCategoryResponse) {
         array = data.findItemsByCategoryResponse
   } else {
@@ -80,7 +82,8 @@ function displayEbayData(data) {
   try {
       const resultArray = array[0].searchResult[0].item;
       const results = resultArray.map((item, index) => renderResult(item, index));
-      /*join array of stings into one string and add to .search-results div  */    
+      /*join array of strings into one string and add to .search-results div. 
+      show appropriate pagination buttons and page number */    
       $('.search-results').prop('hidden', false).html(results.join(''));
       $('.pageButtons').prop('hidden', false);
       $('.pageNumDisplay').html(`Page ${state.pageNum}`);
@@ -97,6 +100,7 @@ function displayEbayData(data) {
     }
   }
 
+//access eBay api for preset category search
 function getCategoryDataFromEbay(category) {
   console.log(category);
 
@@ -105,7 +109,7 @@ function getCategoryDataFromEbay(category) {
        $.getJSON(EBAY_CATEGORY_URL, displayEbayData);
 }
 
-
+//show items by eBay category
 function listenForCategoryButton() {
 
   $('.category-button').click(event => {
@@ -120,6 +124,7 @@ function listenForCategoryButton() {
 });
 }
 
+//handle pagination
 function handlePageButtons() {
   console.log('handlePageButtons ran');
   $('#prevButton').click(event => {
@@ -143,6 +148,7 @@ function makePagination(step) {
     }
 }
 
+//fix navigation bar to the top of the screen on scroll
 function watchScroll() {
   $(document).scroll(function() {
     if(window.scrollY >= 570) {
@@ -156,6 +162,7 @@ function watchScroll() {
   });
 }
 
+//google maps location
 function initMap() {
   // The location of Uluru
   var uluru = {lat: 36.9989797, lng: -109.0473741};

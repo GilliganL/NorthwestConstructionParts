@@ -172,10 +172,15 @@ p {
 
 .eBay h2 {
 	font-size: 36px;
+	margin-bottom: 20px;
 }
 
 .eBay h3 {
 	font-size: 22px;
+	margin: 0;
+}
+
+.eBay h4 {
 	margin: 0;
 }
 
@@ -216,6 +221,10 @@ p {
 	background-image: linear-gradient(rgba(26, 44, 53, .7), rgba(26, 44, 53, .9)),
 	url('qbkls/qbkls.png');
 	color: #f9faf9;
+}
+
+.contact-form label {
+	margin-bottom: 5px;
 }
 
 input, textarea, button {
