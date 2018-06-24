@@ -329,6 +329,13 @@ a:hover, button:hover {
 	cursor: pointer;
 }
 
+input:focus, 
+textarea:focus, 
+button:focus {
+	outline: 2px outset #ff7c2b;
+	border: 1px solid #ff7c2b;
+}
+
 /*Screens bigger than 400px and smaller than 768px*/
 @media screen and (min-width: 400px) {
 

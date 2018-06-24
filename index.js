@@ -72,8 +72,9 @@ function displayEbayData(data) {
   try {
       const resultArray = array[0].searchResult[0].item;
       const results = resultArray.map((item, index) => renderResult(item, index));
-      //join array of stings into one string and add to .search-results div      
-      $('.search-results').html(results.join(''));
+      /*join array of stings into one string and add to .search-results div  */    
+      $('.search-results').prop('hidden', false).html(results.join(''));
+      $('.pageButtons').prop('hidden', false);
       $('.pageNumDisplay').html(`Page ${state.pageNum}`);
       if(state.pageNum == 1) {
         $('#prevButton').addClass('hidden');
@@ -81,7 +82,9 @@ function displayEbayData(data) {
       } else {
         $('#prevButton').removeClass('hidden');
         $('#nextButton').removeClass('hidden');
-      } } catch {
+      } } 
+
+      catch {
         $('.search-results').html('<h4>Please contact us for this product</h4>');
     }
   }
