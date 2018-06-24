@@ -51,6 +51,7 @@ function watchEbaySubmit() {
   $('.ebay-form').submit(event => {
     event.preventDefault();
     state.category = '';
+    state.pageNum = 1;
     const queryTarget = $(event.currentTarget).find('.js-query');
     state.searchTerm = queryTarget.val();
     queryTarget.val("");
@@ -100,6 +101,7 @@ function listenForCategoryButton() {
 
         event.preventDefault();
         state.searchTerm = '';
+        state.pageNum = 1;
         const buttonPushed = $(event.currentTarget);
         state.category = buttonPushed.data().value;
 
@@ -145,7 +147,7 @@ function watchScroll() {
 
 function initMap() {
   // The location of Uluru
-  var uluru = {lat: 35.108045, lng: -106.644853};
+  var uluru = {lat: 36.9989797, lng: -109.0473741};
   // The map, centered at Uluru
   var map = new google.maps.Map(
       document.getElementById('map'), {zoom: 15, center: uluru});

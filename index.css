@@ -1,6 +1,4 @@
-/*
-   #ff6506 old site orange
-
+/* 
 #ff7c2b orange (crayola)
 #f9faf9 ghost white
 #bac1b8 gray x11 gray
@@ -9,9 +7,8 @@
 
 font-family: 'Roboto', sans-serif;
 font-family: 'Roboto Slab', serif;
-
-
 */
+
 body {
 	background: #f9faf9;
 	color: #1a2c35 ;
@@ -29,7 +26,6 @@ h1, h2, h3, h4, header, .landing {
 	font-family: 'Roboto Slab', serif;
 	font-weight: bold;
 }
-
 
 .landing {
 	background:	 linear-gradient(
@@ -74,6 +70,11 @@ h5 {
 
 .nav-name {
 	display: hidden;
+}
+
+.nav-name a {
+	text-decoration: none;
+	color: #f9faf9;
 }
 
 .animated {
@@ -133,6 +134,10 @@ p {
 
 .products {
 	text-align: left;
+	background:	 linear-gradient(
+		rgba(249, 250, 249, .3),
+		rgba( 249, 250, 249, .6)),
+	url('https://storage.googleapis.com/webdesignledger.pub.network/LaT/edd/2016/02/light-black-concrete-grunge-texture-10.jpg') center center;
 }
 
 .products h2 {
@@ -186,6 +191,18 @@ p {
 
 .category-button, #search-button, .js-query {
 	width: 100%;
+}
+
+.category-button:hover, #search-button:hover, .pageButton:hover {
+	background: rgba(26, 44, 53, .8);
+	color: #f9faf9;
+	border: none;
+}
+
+.contact-button:hover {
+	background: #ff7c2b;
+	color: #f9faf9;
+	border: none;
 }
 
 .pageNumDisplay {
@@ -260,6 +277,10 @@ textarea {
 	width: 100%;
 }
 
+fieldset {
+	border: none;
+}
+
 #gotcha {
 	display: none;
 }
@@ -298,6 +319,19 @@ footer a:hover {
 	display: none;
 }
 
+button, a, .contact-button {
+	-webkit-transition: color .5s, background .5s;
+	transition: color .5s, background .5s;
+}
+
+button, .contact-button {
+	color: #1a2c35;
+	font-weight: bold;
+}
+
+a:hover, button:hover {
+	cursor: pointer;
+}
 
 /*Screens bigger than 400px and smaller than 768px*/
 @media screen and (min-width: 400px) {
@@ -341,8 +375,11 @@ footer a:hover {
 		height: 150px;
 		margin-top: 20%;
 	}
-}
 
+	#category-button3 {
+		padding-top: 0;
+	}
+}
 
 /*Screens bigger than 768px*/
 @media screen and (min-width: 768px) {
@@ -354,13 +391,13 @@ footer a:hover {
 	.nav-name {
 		color: #f9faf9;
 		position: absolute;
-		left: 15px;
-		top: 8px;
+		left: 10px;
+		top: 5px;
 		transition: 2s;
 	}
 
 	.nav-name h2 {
-		font-size: 16px;
+		font-size: 18px;
 	}
 
 	.logo {
@@ -468,12 +505,17 @@ footer a:hover {
 	.search-results h4 {
 		color: #1a2c35;
 	}
+
 	.row, .col-12 {
 		height: 100%;
 	}
 
 	.col-3 {
 		width: 50%;
+	}
+
+	.products h2 {
+		font-size: 26px;
 	}
 
 	.card-image {
@@ -529,7 +571,7 @@ footer a:hover {
 	}
 
 	.product-card {
-		height: 300px;
+		height: 310px;
 	}
 
 	.col-3 {
@@ -539,6 +581,10 @@ footer a:hover {
 	.card-image {
 		height: 120px;
 		margin-top: 40%;
+	}
+
+	#category-button3 {
+		padding-top: 5px;
 	}
 
 	input, textarea, button {
