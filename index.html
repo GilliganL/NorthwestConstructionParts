@@ -26,7 +26,7 @@
         <div class="logo-class animated slideInLeft">
           <ul class="navbar-list right" id="inv-menu">
             <a href='#top' class="logo-link animated fadeOut">
-              <img src="images/trucking.svg" alt="Northwest Construction Parts Logo" class="logo" role="logo">
+              <img src="images/trucking.svg" alt="Northwest Construction Parts Logo" class="logo">
             </a>
             <li><a href="#products" class="nav-link">Products</a></li>
             <li><a href="#eBay" class="nav-link">eBay</a></li>
@@ -82,9 +82,9 @@
         </div>
         <div class="row">
           <div class="col-12">
-            <form class="ebay-form" action="# role="search">
-              <label for="js-query" class="hidden" id="search-label">Search</label>
-              <input type="text" class="js-query" id="js-query" placeholder="Search eBay Inventory" required>
+            <form class="ebay-form" action="#" role="search">
+              <label for="js-query"></label>
+              <input type="text" class="js-query" placeholder="Search eBay Inventory" required>
               <button type="submit" id="search-button">Search</button>
             </form>
           </div>
@@ -143,10 +143,14 @@
             <form class="contact-form" action="https://formspree.io/lynseympowell@gmail.com"
             method="POST">
               <fieldset>
-                <input type="text" name="name" placeholder="Name" required>
-                <input type="email" name="_replyto" placeholder="Email Address" required>
-                <input type="tel" name="telephone" placeholder="555-555-5555">
-                <textarea name="message" placeholder="Your message here"></textarea> 
+                <label for="contact-name"></label>
+                <input type="text" id="contact-name" name="name" placeholder="Name" required>
+                <label for="contact-email"></label>
+                <input type="email" id="contact-email" name="_replyto" placeholder="Email Address" required>
+                <label for="contact-tel"></label>
+                <input type="tel" id="contact-tel" name="telephone" placeholder="555-555-5555">
+                <label for="contact-message"></label>
+                <textarea name="message" id="contact-message" placeholder="Your message here"></textarea> 
                 <input type="hidden" name="_subject" value="New Contact"/>
                 <input type="text" name="_gotcha" id="gotcha"/>
                 <input type="submit" value="Send" class="contact-button">
