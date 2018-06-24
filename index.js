@@ -102,7 +102,6 @@ function displayEbayData(data) {
 
 //access eBay api for preset category search
 function getCategoryDataFromEbay(category) {
-  console.log(category);
 
    const EBAY_CATEGORY_URL=(`https://svcs.ebay.com/services/search/FindingService/v1?OPERATION-NAME=findItemsByCategory&SERVICE-VERSION=1.0.0&SECURITY-APPNAME=LynseyPo-SWCWebsi-PRD-e2ccf98b2-a9811a7d&RESPONSE-DATA-FORMAT=JSON&REST-PAYLOAD&categoryId=${state.category}&itemFilter(0).name=Seller&itemFilter(0).value(0)=diggersupply&paginationInput.entriesPerPage=12&paginationInput.pageNumber=${state.pageNum}&callback=?`);
    
@@ -126,7 +125,7 @@ function listenForCategoryButton() {
 
 //handle pagination
 function handlePageButtons() {
-  console.log('handlePageButtons ran');
+
   $('#prevButton').click(event => {
       event.preventDefault();
       makePagination(-1);
@@ -143,7 +142,6 @@ function makePagination(step) {
     if (state.category) {
       getCategoryDataFromEbay(state.category);
     } else {
-      console.log(state.pageNum)
       getDataFromApi(state.searchTerm);
     }
 }
