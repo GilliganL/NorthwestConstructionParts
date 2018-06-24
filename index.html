@@ -77,18 +77,19 @@
         <div class="row">
           <div class="col-12">
             <h2>Search Our eBay Store</h2>
+            <h3>Stocked with thousands of items and actively updated</h3>
           </div>
         </div>
           <form class="ebay-form" action="#" role="search">
             <div class="row">
               <div class="col-12">
-              <label for="js-query"><h3>Stocked with thousands of items and actively updated</h3></label>
+              <label for="js-query"><h4>Search Our eBay Inventory</h4></label>
             </div>
           </div>
           <div class="row">
             <div class="col-12">
-              <input type="text" class="js-query" id="js-query" placeholder="Search eBay Inventory" required>
-              <button type="submit" id="search-button">Search</button>
+              <input type="text" class="js-query" id="js-query" placeholder="Search eBay Inventory" aria-live="assertive" required>
+              <button type="submit" id="search-button" aria-live="assertive">Search</button>
             </div>
           </div>
         </form>
@@ -96,22 +97,22 @@
           <h3>Search by Category</h3>
           <div class="row">
             <div class="col-4">
-              <button type="button" class="category-button" id="category-button1" data-value="66927">Augers</button>
+              <button type="button" class="category-button" id="category-button1" data-value="66927" aria-live="assertive" aria-label="Search by category Augers">Augers</button>
             </div>
             <div class="col-4">
-              <button type="button" class="category-button" id="category-button2" data-value="50908">Buckets &amp; Accessories</button>
+              <button type="button" class="category-button" id="category-button2" data-value="50908" aria-live="assertive" aria-label="Search by category buckets and accessories">Buckets &amp; Accessories</button>
             </div>
             <div class="col-4">
-              <button type="button" class="category-button" id="category-button3" data-value="41490">Constuction Equipment Parts</button>
+              <button type="button" class="category-button" id="category-button3" data-value="41490" aria-live="assertive" aria-label="Search by category construction equipment parts">Constuction Equipment Parts</button>
             </div>
           </div>
         </div>
         <div class="search-results" aria-live="assertive" hidden></div>
-        <div class="nextForm" aria-live="polite" hidden></div>
-        <div class="pageButtons row" aria-live="polite" hidden>
-          <button class="pageButton hidden" id="prevButton"><i class="fas fa-angle-double-left"></i></button>
+        <div class="nextForm" hidden></div>
+        <div class="pageButtons row" aria-live="assertive" hidden>
+          <button class="pageButton hidden" id="prevButton" aria-live="assertive" aria-label="previous page"><i class="fas fa-angle-double-left" ></i></button>
           <h5 class='pageNumDisplay'></h5>
-          <button class="pageButton hidden" id="nextButton"><i class="fas fa-angle-double-right"></i></button>
+          <button class="pageButton hidden" id="nextButton" aria-live="assertive" aria-label="next page"><i class="fas fa-angle-double-right"></i></button>
         </div>
       </section>
       <section class="location" id="location">
@@ -146,13 +147,17 @@
             <form class="contact-form" action="https://formspree.io/lynseympowell@gmail.com"
             method="POST">
               <fieldset>
+                <label for="contact-name">Name:</label>
                 <input type="text" id="contact-name" name="name" placeholder="Name" required>
+                <label for="contact-email">Email:</label>
                 <input type="email" id="contact-email" name="_replyto" placeholder="Email Address" required>
+                <label for="contact-tel">Telephone Number:</label>
                 <input type="tel" id="contact-tel" name="telephone" placeholder="555-555-5555">
+                <label for="contact-message">Your Message:</label>
                 <textarea name="message" id="contact-message" placeholder="Your message here"></textarea> 
                 <input type="hidden" name="_subject" value="New Contact"/>
                 <input type="text" name="_gotcha" id="gotcha"/>
-                <input type="submit" value="Send" class="contact-button">
+                <input type="submit" value="Send" class="contact-button" aria-live="assertive">
               </fieldset>
             </form> 
           </div>
