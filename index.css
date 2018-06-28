@@ -14,6 +14,7 @@ body {
 	color: #1a2c35 ;
 	font-family: 'Roboto', sans-serif;
 	font-weight: normal;
+	line-height: 140%;
 }
 
 header {
@@ -35,7 +36,6 @@ h1, h2, h3, h4, header, .landing {
 	background-size: cover;
 	background-repeat: no-repeat;
 	color: #f9faf9;
-	height: 500px;
 	padding-top: 12em;
 }
 
@@ -61,7 +61,7 @@ h5 {
 }
 
 .landing p {
-	font-size: 1em;
+	font-size: 18px;
 }
 
 .logo {
@@ -164,10 +164,14 @@ p {
 	text-align: center;
 }
 
+.product-card p {
+	margin: 5px 0;
+}
+
 .eBay {
 	background-image: linear-gradient( rgba(93, 158, 191, .5), rgba(93, 158, 191, .5)),
 	url('qbkls/qbkls.png');
-	color: #f9faf9;
+	color: #1a2c35;
 }
 
 .eBay h2 {
@@ -182,6 +186,11 @@ p {
 
 .eBay h4 {
 	margin: 0;
+	font-size: 18px;
+}
+
+.categories h3 {
+	margin-bottom: 10px;
 }
 
 .js-query, button, #search-label {
@@ -299,12 +308,16 @@ fieldset {
 
 footer {
 	position: relative;
-	height: 100px;
-	padding-top: 20px;
+	padding-top: 10px;
 	padding-bottom: 10px;
 	text-align: center;
+	font-size: 15px;
 	background: rgba(26, 44, 53, 1);
 	color: #f9faf9;
+}
+
+footer p {
+	text-align: center;
 }
 
 .me {
@@ -529,7 +542,7 @@ button:focus {
 	}
 
 	.product-card {
-		height: 400px;
+		height: 414px;
 		padding: 10px;
 	}
 
@@ -581,7 +594,7 @@ button:focus {
 	.me {
 		position: absolute;
 		left: 10px;
-		bottom: 15px;
+		bottom: 0;
 	}
 
 	.citation {

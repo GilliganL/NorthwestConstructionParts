@@ -15,7 +15,7 @@
 	<body>
 		<header role="banner">
       <section class="landing">
-        <h1>Norththwest Construction Parts</h1>
+        <h1>Northwest Construction Parts</h1>
         <h2>Heavy Equipment Replacement Parts</h2>
         <p class="p-center">Serving New Mexico and surrounding communities</p>
       </section>
@@ -147,14 +147,10 @@
             <form class="contact-form" action="https://formspree.io/lynseympowell@gmail.com"
             method="POST">
               <fieldset>
-                <label for="contact-name">Name:</label>
-                <input type="text" id="contact-name" name="name" placeholder="Name" required>
-                <label for="contact-email">Email:</label>
-                <input type="email" id="contact-email" name="_replyto" placeholder="Email Address" required>
-                <label for="contact-tel">Telephone Number:</label>
-                <input type="tel" id="contact-tel" name="telephone" placeholder="555-555-5555">
-                <label for="contact-message">Your Message:</label>
-                <textarea name="message" id="contact-message" placeholder="Your message here"></textarea> 
+                <input type="text" id="contact-name" name="name" placeholder="Name" aria-lable="name" required>
+                <input type="email" id="contact-email" name="_replyto" placeholder="Email Address" aria-lable="Email" required>
+                <input type="tel" id="contact-tel" name="telephone" placeholder="555-555-5555" aria-lable="phone number">
+                <textarea name="message" id="contact-message" placeholder="Your message here" aria-lable="your message"></textarea> 
                 <input type="hidden" name="_subject" value="New Contact"/>
                 <input type="text" name="_gotcha" id="gotcha"/>
                 <input type="submit" value="Send" class="contact-button" aria-live="assertive">
@@ -168,7 +164,7 @@
       </section>
     </main>
     <footer role="contentinfo">
-      <div class="me">Created by Lynsey Powell</div>
+      <div class="me"><p>Created by Lynsey Powell</p></div>
       <div class="citation">Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
     </footer>
 	</body>
