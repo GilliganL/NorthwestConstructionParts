@@ -160,20 +160,8 @@ function watchScroll() {
   });
 }
 
-//google maps location
-function initMap() {
-  // The location of Uluru
-  var uluru = {lat: 36.9989797, lng: -109.0473741};
-  // The map, centered at Uluru
-  var map = new google.maps.Map(
-      document.getElementById('map'), {zoom: 15, center: uluru});
-  // The marker, positioned at Uluru
-  var marker = new google.maps.Marker({position: uluru, map: map});
-}
-
 
 function handleStartPage() {
-  initMap();
   watchScroll();
   watchEbaySubmit();
   listenForCategoryButton();
